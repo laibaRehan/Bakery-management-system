@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Form</title>
+    <link rel="shortcut icon" type="x-icon" href="./img/logos/cake_logo.png">
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="general.css" />
+    <link rel="stylesheet" href="./assets/css/simple-line-icons.css">
+    <script>
+        function orderconfirmation() {
+            alert("Your order was successfully placed. Thank You for ordering HUST Fabrics! You will receive a mail form www.hustfabrics.com.pk in which all information are given related your total payment and product tracking. For any further query you can visit our website www.hustfabrics.com.pk")
+        }
+
+        function subscription() {
+			alert("Thanks for subscribing to our newsletter!");
+		}
+
+        function validateemail() {
+            var form = document.getElementById('form');
+            var email = document.getElementById('Email').value;
+            var text = document.getElementById('text');
+            var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+            if(email.match(pattern)) {
+                form.classList.add("valid");
+                form.classList.remove("invalid");
+                text.innerHTML = "Your Email Address is Valid.";
+                text.style.color = "red";
+            } 
+            else {
+                form.classList.remove("valid");
+                form.classList.add("invalid");
+                text.innerHTML = "Please Enter Valid Email Address.";
+                text.style.color = "red";
+            }
+            }
+
+        function validateproductcode() {
+            var form = document.getElementById('form');
+            var productcode = document.getElementById('Product Code').value;
+            var text = document.getElementById('prod-code');
+            var pattern = /SK/;
+
+            if(productcode.match(pattern)) {
+                form.classList.add("valid");
+                form.classList.remove("invalid");
+                text.innerHTML = "Your Product Code is Valid";
+                text.style.color = "red";
+            } 
+            else {
+                form.classList.remove("valid");
+                form.classList.add("invalid");
+                text.innerHTML = "Please Enter Valid Product Code";
+                text.style.color = "red";
+            }
+
+            if(email == "") {
+                form.classList.remove("valid");
+                form.classList.remove("invalid");
+                text.innerHTML = "";
+                text.style.color = "#00ff00";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header class="header">
+        <a href="#">
+          <img class="logo" alt="DLS logo" src="img/logos/cake_logo.png" />
+        </a>
+  
+        <nav class="main-nav">
+          <ul class="main-nav-list">
+            <li><a class="main-nav-link" href="#home">Home</a></li>
+            <li><a class="main-nav-link" href="#dashboard">Dashboard</a></li>
+            <li><a class="main-nav-link" href="#testimonials">Testimonials</a></li>
+            <li><a class="main-nav-link" href="#About">About</a></li>
+            <li><a class="main-nav-link nav-cta" href="#cta">Cart</a></li>
+          </ul>
+        </nav>
+  
+        <button class="btn-mobile-nav">
+          <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
+          <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
+        </button>
+      </header>
+      
+      <footer class="footer" id="About">
+        <div class="container grid grid--footer">
+          <div class="logo-col">
+            <a href="#" class="footer-logo">
+              <img class="logo" alt="Omnifood logo" src="img/logos/cake_logo.png" />
+            </a>
+  
+            <ul class="social-links">
+              <li>
+                <a class="footer-link" href="#"
+                  ><ion-icon class="social-icon" name="logo-instagram"></ion-icon
+                ></a>
+              </li>
+              <li>
+                <a class="footer-link" href="#"
+                  ><ion-icon class="social-icon" name="logo-facebook"></ion-icon
+                ></a>
+              </li>
+              <li>
+                <a class="footer-link" href="#"
+                  ><ion-icon class="social-icon" name="logo-twitter"></ion-icon
+                ></a>
+              </li>
+            </ul>
+  
+            <p class="copyright">
+              Copyright &copy; 2023 by DLS Bakers, Inc. All rights reserved.
+            </p>
+          </div>
+  
+          <div class="address-col">
+            <p class="footer-heading">Contact us</p>
+            <address class="contacts">
+              <p class="address">
+                9th St. Khayaban-e-Mujahid, DHA Phase V, Karachi
+              </p>
+              <p>
+                <a class="footer-link" href="tel:415-201-6370">021-3254791</a
+                ><br />
+                <a class="footer-link" href="mailto:hello@omnifood.com"
+                  >hello@dlsbakers.com</a
+                >
+              </p>
+            </address>
+          </div>
+  
+          <nav class="nav-col">
+            <p class="footer-heading">Account</p>
+            <ul class="footer-nav">
+              <li><a class="footer-link" href="#">Create account</a></li>
+              <li><a class="footer-link" href="#">Sign in</a></li>
+              <li><a class="footer-link" href="#">iOS app</a></li>
+              <li><a class="footer-link" href="#">Android app</a></li>
+            </ul>
+          </nav>
+  
+          <nav class="nav-col">
+            <p class="footer-heading">Company</p>
+            <ul class="footer-nav">
+              <li><a class="footer-link" href="#">About DLS Bakers</a></li>
+              <li><a class="footer-link" href="#">For Business</a></li>
+              <li><a class="footer-link" href="#">Baking partners</a></li>
+              <li><a class="footer-link" href="#">Careers</a></li>
+            </ul>
+          </nav>
+  
+          <nav class="nav-col">
+            <p class="footer-heading">Resources</p>
+            <ul class="footer-nav">
+              <li><a class="footer-link" href="#">Recipe directory </a></li>
+              <li><a class="footer-link" href="#">Help center</a></li>
+              <li><a class="footer-link" href="#">Privacy & terms</a></li>
+            </ul>
+          </nav>
+        </div>
+      </footer>
+</body>
+</html>
